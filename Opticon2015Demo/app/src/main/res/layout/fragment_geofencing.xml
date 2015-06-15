@@ -9,14 +9,4 @@
                 android:orientation="vertical"
                 tools:context=".MainActivity$PlaceholderFragment">
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="@string/sale_dialog_button_text"
-            android:id="@+id/sales_dialog"
-            android:layout_marginBottom="15dp"
-            />
-
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="@string/another_dialog"
-            android:id="@+id/another_dialog"/>
-
 </LinearLayout>
