@@ -9,4 +9,12 @@
                 android:orientation="vertical"
                 tools:context=".MainActivity$PlaceholderFragment">
 
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/total_visits"
+            />
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/all_locations"
+            />
 </LinearLayout>

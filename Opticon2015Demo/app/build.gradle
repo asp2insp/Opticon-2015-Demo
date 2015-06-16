@@ -25,4 +25,5 @@ dependencies {
     compile('com.optimizely:optimizely:+@aar') {
         transitive = true
     }
+    compile 'com.google.android.gms:play-services:7.5.0'
 }

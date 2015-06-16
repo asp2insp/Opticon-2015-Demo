@@ -73,8 +73,10 @@ public class MainActivity extends AppCompatActivity
 
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(true);
+            actionBar.setTitle(mTitle);
+        }
     }
 
     @Override

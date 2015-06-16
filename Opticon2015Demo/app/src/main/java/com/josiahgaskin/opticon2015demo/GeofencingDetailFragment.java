@@ -1,11 +1,18 @@
 package com.josiahgaskin.opticon2015demo;
 
+import com.optimizely.Optimizely;
+
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.Collections;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -36,7 +43,18 @@ public class GeofencingDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_dialogs, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_geofencing, container, false);
+        final SharedPreferences prefs = getActivity()
+                .getSharedPreferences("brickandmortar", Context.MODE_PRIVATE);
+        int totalVisits = prefs.getInt("TOTAL_VISITS", 0);
+        ((TextView)rootView.findViewById(R.id.total_visits)).setText(String.format("Total Visits: %d", totalVisits));
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("You have visited the following locations: ");
+        for (String locationName : prefs.getStringSet("VISITED_SET", Collections.<String>emptySet())) {
+            sb.append(locationName).append(" ");
+        }
+        ((TextView)rootView.findViewById(R.id.all_locations)).setText(sb.toString());
         return rootView;
     }
 
