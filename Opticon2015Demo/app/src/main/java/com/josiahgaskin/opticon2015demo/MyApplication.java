@@ -75,7 +75,6 @@ public class MyApplication extends Application implements
         Log.i(TAG, "Connected to GoogleApiClient");
         populateGeofenceList();
         sendGeofencingRequest();
-        LocationServices.FusedLocationApi.
     }
 
     @Override
